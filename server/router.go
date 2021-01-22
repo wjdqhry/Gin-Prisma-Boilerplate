@@ -1,7 +1,7 @@
 package server
 
 import (
-	"go-prisma/middleware"
+	"Gin-Prisma-Boilerplate/middleware"
 	"net/http"
 
 	"github.com/gin-gonic/gin"

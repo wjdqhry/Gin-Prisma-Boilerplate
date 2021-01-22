@@ -1,8 +1,8 @@
 package prisma
 
 import (
+	"Gin-Prisma-Boilerplate/db"
 	"context"
-	"go-prisma/db"
 )
 
 var Client *db.PrismaClient

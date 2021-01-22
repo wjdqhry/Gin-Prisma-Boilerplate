@@ -1,6 +1,9 @@
 package main
 
-import "Gin-Prisma-Boilerplate/server"
+import (
+	"Gin-Prisma-Boilerplate/prisma"
+	"Gin-Prisma-Boilerplate/server"
+)
 
 func main() {
 	if err := run(); err != nil {

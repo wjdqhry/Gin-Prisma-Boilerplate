@@ -1,10 +1,10 @@
 package middleware
 
 import (
+	"Gin-Prisma-Boilerplate/db"
+	"Gin-Prisma-Boilerplate/jwtAuth"
+	"Gin-Prisma-Boilerplate/prisma"
 	"fmt"
-	"go-prisma/db"
-	"go-prisma/jwtAuth"
-	"go-prisma/prisma"
 	"log"
 	"net/http"
 	"strings"
@@ -57,8 +57,6 @@ func JWTmiddleware(c *gin.Context) {
 			// ).Exec(prisma.Ctx)
 			user, err := prisma.Client.User.FindOne(
 				db.User.PhoneNumber.Equals(v.(string)),
-			).With(
-				db.User.CenterUser.Fetch(),
 			).Exec(prisma.Ctx)
 			//log.Println(user[3])
 			if err != nil {
