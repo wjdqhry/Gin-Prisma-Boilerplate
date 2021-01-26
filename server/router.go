@@ -17,5 +17,14 @@ func NewRouter() *gin.Engine {
 		})
 	})
 
+	v1 := r.Group("/v1")
+	{
+		userGroup := v1.Group("/user", middleware.JWTmiddleware)
+		{
+
+			userGroup.GET("/")
+		}
+	}
+
 	return r
 }
